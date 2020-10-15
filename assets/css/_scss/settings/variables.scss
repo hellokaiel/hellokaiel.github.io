@@ -1,0 +1,25 @@
+//SCSS native variables
+    //Vertical Rhythm Spacing
+    $standard-unit: 16px;
+    $standard-unit-sm: 14px;
+    $spacing-base: 24px;
+
+:root {
+    //Contrast Scale
+    --color-white: hsla(0, 0%, 100%, 1);
+    --color-contrast-50: hsla(0, 0%, 98%, 1);
+    --color-contrast-100: hsla(0, 0%, 96%, 1);
+    --color-contrast-200: hsla(0, 0%, 93%, 1);
+    --color-contrast-300: hsla(0, 0%, 88%, 1);
+    --color-contrast-400: hsla(0, 0%, 74%, 1);
+    --color-contrast-500: hsla(0, 0%, 62%, 1);
+    --color-contrast-600: hsla(0, 0%, 46%, 1);
+    --color-contrast-700: hsla(0, 0%, 38%, 1);
+    --color-contrast-800: hsla(0, 0%, 26%, 1);
+    --color-contrast-900: hsla(0, 0%, 13%, 1);
+    --color-black: hsla(0, 0%, 0%, 1);
+    
+    //Typography
+    --font-primary: 'Roboto', "Franklin Gothic Medium", Tahoma, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-content: 'Open Sans', "Segoe UI", Tahoma, sans-serif;
+}

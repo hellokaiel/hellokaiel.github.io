@@ -1,0 +1,123 @@
+.post-article {
+    margin-bottom: space(4);
+}
+
+.post-article_meta {
+    margin-bottom: space(1);
+}
+
+.post-article_meta-date {
+    margin-bottom: space(1);
+    font-size: rem(14px);
+    font-weight: 500;
+    line-height: space(1);
+    color: var(--color-contrast-600);
+}
+
+.post-article_meta-kicker {
+    margin: 0;
+    font-size: rem(14px);
+    line-height: space(1);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-contrast-600);
+}
+
+.post-article_meta-headline {
+    max-width: 75%;
+    margin: 0;
+    font-size: rem(30px);
+    line-height: space(2);    
+    font-weight: 600;
+    color: var(--color-contrast-900);
+    word-break: break-word;
+}
+
+.post-article_meta-deck {
+    margin: 0 0 space(.5);
+    font-size: rem(24px);
+    line-height: space(1.5);
+    font-weight: 300;
+    color: var(--color-contrast-600);
+}
+
+.post-article_content {
+    font-size: rem(18px);
+    line-height: space(1.33333333333);
+    font-family: var(--font-content);
+}
+
+.post-article_content .container.compact {
+    max-width: 624px;
+}
+
+.post-article_content p {
+    margin: 0 0 2rem; //32px
+}
+
+.article-related {
+    padding: 3rem 0;
+    background-color: var(--color-contrast-50);
+}
+
+.article-related .container {
+    max-width: 624px;
+}
+
+.article-related_header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: space(.5);
+    margin-bottom: rem(-1px);    
+    border-bottom: rem(1px) solid var(--color-contrast-300);
+}
+
+.article-related_header-category {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.article-related_header-category_heading {
+    margin: 0;
+    font-size: rem(12px);
+    line-height: space(1);
+    font-weight: 500;
+    text-transform: uppercase;    
+}
+
+.article-related_header-category_group {
+    margin: rem(12px) 0;
+    font-size: rem(18px);
+    line-height: space(1);
+}
+
+.article-related_entry {
+    display: block;
+    padding: space(1) 0;
+    margin-bottom: rem(-1px);
+    border-bottom: rem(1px) solid var(--color-contrast-300);
+    text-decoration: none;
+}
+
+.article-related_entry:last-of-type {
+    margin: 0;
+    border: 0;
+}
+
+.article-related_entry-headline {
+    margin: 0;
+    font-size: rem(16px);
+    line-height: space(1);
+    color: var(--color-contrast-900);
+}
+
+.article-related_entry-date {
+    margin: 0;
+    font-size: rem(14px);
+    line-height: space(1);
+    font-weight: 500;
+    color: var(--color-contrast-700);
+}

@@ -1,0 +1,37 @@
+
+# hellokaiel.us
+site_title: Karl Pineda
+site_description: hellokaiel.us is the personal website of Karl Pineda. That's pretty much all you need to know about it.
+
+# Setup
+date_format: "%b %-d, %Y"
+disable_disk_cache: true
+markdown: kramdown
+
+# Outputting
+permalink: "/:title/"
+paginate_path: "/page:num"
+
+# Customization
+defaults:
+  - scope:
+      path: "_pages"
+    values:
+      type: "pages"
+  - scope:
+      path: "_posts/articles"
+    values:
+      type: "articles"
+  - scope:
+      path: "_posts/projects"
+    values:
+      type: "projects"
+
+sass:
+    sass_dir: assets/css/_scss
+
+# _pages customization
+collections:
+  pages:
+    output: true
+    permalink: /:path/

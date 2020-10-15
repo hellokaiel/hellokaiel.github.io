@@ -1,0 +1,12 @@
+<nav class="site-navigation" role="navigation">
+    <div class="container wide">
+        <a href="{{ "/" | absolute_url }}" class="site-navigation_logo">
+            <div class="site-navigation_logo-inner"></div>
+        </a>
+        <div class="site-navigation_links">
+            {%- for link in site.data.globals.data.site-navigation.links -%}
+            <a href="{{ link.url | relative_url }}" class="site-navigation_link">{{ link.name }}</a>
+            {%- endfor -%}
+        </div>
+    </div>
+</nav>

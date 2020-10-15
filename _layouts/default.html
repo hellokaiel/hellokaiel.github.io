@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>
+        {%- if page.title == "Home" -%}
+            {{ site.site_title }}
+        {%- else -%}
+            {{ page.title }} &#x2015; {{ site.site_title }}
+        {%- endif -%}            
+        </title>
+        <meta name="description" content="{{ site.site_description }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="apple-touch-icon" href="{{ "/public/apple-icon-precomposed.png" | relative_url }}">
+        <link rel="icon" href="{{ "/public/favicon-32x32.png" | relative_url }}">
+        
+        <link rel="stylesheet" href="{{ "/assets/fonts/open_sans/embed.min.css" | relative_url }}">
+        <link rel="stylesheet" href="{{ "/assets/fonts/roboto/embed.min.css" | relative_url }}">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}?{{ site.time | date: '%s%N' }}">
+        
+        <meta name="theme-color" content="#fafafa">
+    </head>
+    <body class="overlay">
+        <div class="scope-surface">
+            {% include globals/site-navigation.html %}
+        
+            {{ content }}
+        
+            {% include globals/site-footer.html %}
+        </div>    
+    </body>
+</html>

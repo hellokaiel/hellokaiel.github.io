@@ -1,0 +1,17 @@
+<footer class="site-footer" role="contentinfo">
+    <section class="site-footer_navigation">
+        <div class="container">
+            <a href="{{ "/" | absolute_url }}" class="site-footer_brand">hellokaiel.us</a>
+            <div class="site-footer_links">
+                {%- for link in site.data.globals.data.site-footer.links -%}
+                <a href="{{ link.url | relative_url }}" class="site-footer_link">{{ link.name }}</a>
+                {%- endfor -%}
+            </div>    
+        </div>
+    </section>
+    <section class="site-footer_legal">
+        <div class="container">
+            <p class="site-footer_copyright">© 2020 — Karl Pineda</p>
+        </div>
+    </section>
+</footer>

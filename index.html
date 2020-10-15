@@ -1,0 +1,65 @@
+---
+layout: default
+title: Home
+---
+<main class="surface-content">
+    <section class="blog-feed">
+        <div class="container">
+            <header class="blog-feed_feed-header">
+                <h1 class="feed-header-title">Blog</h1>
+                <div class="feed-header_categories">
+                    <a class="feed-header_category">All</a>
+                    <a class="feed-header_category">Uncategorized</a>
+                </div>
+            </header>
+
+            {%- assign blog_entries = site.posts | where:"type", "articles" -%}
+
+            {%- assign entry_counter = 0 -%}
+            {%- if blog_entries.size > 0 -%}
+                {%- for entries in blog_entries -%}
+                    {%- assign entry_counter = entry_counter | plus: 1 -%}
+                {%- endfor -%}
+                {%- if blog_entries.size == 1 -%}
+                <span class="blog-feed_post-total">{{ entry_counter }} article</span>
+                {%- else -%}
+                <span class="blog-feed_post-total">{{ entry_counter }} articles</span>
+                {%- endif -%}
+            {%- else -%}
+                <span class="blog-feed_post-total">0 articles</span>
+            {%- endif -%}
+            <div class="blog-feed_aggregate">
+                {%- if blog_entries.size > 0 -%}
+                {%- assign sort_by_year = blog_entries | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
+                {%- for year in sort_by_year -%}
+                <span class="blog-feed_post-year">{{ year.name }}</span>
+                {%- for entry in year.items -%}
+                <a href="{{ entry.url | relative_url }}" class="blog-post">
+                    <header class="blog-post_meta-header">
+                        <time class="blog-post_meta-date">{{ entry.date | date: "%b %d, %Y" }}</time>
+                        <h2 class="blog-post_meta-headline">{{ entry.headline }}</h2>
+                    </header>
+                </a>
+                {%- endfor -%}
+                {%- endfor -%}
+                {%- else -%}
+                <div class="blog-feed_empty">
+                    <h1 class="blog-feed_empty-heading">
+                        Oops, there's nothing published on here yet. 😢
+                    </h1>
+                    <p class="blog-feed_empty-phrase">
+                        Probably out procrastinating somewhere.
+                        <br>
+                        So much for content, huh?
+                    </p>
+                    <div class="blog-feed_empty-nudge">
+                        <a>
+                            Nudge Karl to post?
+                        </a>
+                    </div>    
+                </div>
+                {%- endif -%}
+            </div>
+        </div>    
+    </section>
+</main>

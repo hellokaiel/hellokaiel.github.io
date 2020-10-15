@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<main class="surface-content post">
+    <article class="post-article">
+        <div class="container compact">
+            <header class="post-article_meta">
+                <time class="post-article_meta-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %d, %Y" }}</time>              
+                <h1 class="post-article_meta-headline">{{ page.headline | escape }}</h1>
+                {%- if page.subtitle -%}
+                    <h2 class="post-article_meta-deck">{{ page.subtitle | escape }}</h2>
+                {%- endif -%}
+                {%- if page.kicker -%}
+                    <h3 class="post-article_meta-kicker">{{ page.kicker | escape }}</h3>
+                {%- endif -%}             
+            </header>
+        </div>
+        <div class="post-article_content">
+            {{ content }}
+        </div>   
+    </article>
+    
+    <section class="article-related">
+        <div class="container compact">
+            <header class="article-related_header">
+                <div class="article-related_header-category">
+                    <h3 class="article-related_header-category_heading">Also Found In</h3>
+                    <h4 class="article-related_header-category_group">{{ page.categories }}</h4>                   
+                </div>
+            </header>
+            <a href="{{ post.url | relative_url }}" class="article-related_entry">
+                <h4 class="article-related_entry-headline">{{ page.title | escape }}</h4>
+                <time class="article-related_entry-date">{{ page.date | date: "%b %d, %Y" }}</time>
+            </a>
+        </div>
+    </section>
+</main>    

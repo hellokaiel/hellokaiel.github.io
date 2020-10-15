@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section, time {
+    display: block;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: rem(24px);
+    color: var(--color-contrast-900);
+    background-color: var(--color-white);
+    text-rendering: geometricPrecision;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+.scope-surface {
+    display: flex;
+    flex-direction: column;    
+    min-height: 100vh;
+}
+
+.surface-content {
+    flex: 1;
+}
+
+.surface-content.post + .site-footer {
+    background-color: #fafafa;
+}

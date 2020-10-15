@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container.compact {
+    max-width: 624px; //24 x 26
+}
+
+.container {
+    max-width: 1032px; //24 x 43
+}
+
+.container.wide {
+    max-width: 1176px; //24 x 49
+}
+
+.container.full{
+    max-width: 100%;
+}
