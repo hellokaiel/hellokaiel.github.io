@@ -75,16 +75,14 @@
 
 .about-qualifications_part-subdivision_contact {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: space(1);
     grid-row-gap: space(1);
-    max-width: 50%;
 }
 
 @media (min-width: 768px) {
     .about-qualifications_part-subdivision_contact {
         grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: space(1);
-        max-width: 100%;
     }
 }
 
