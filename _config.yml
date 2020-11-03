@@ -30,8 +30,10 @@ defaults:
 sass:
     sass_dir: assets/css/_scss
 
-# _pages customization
+# Custom Collections
 collections:
+  category:
+    output: true
   pages:
     output: true
     permalink: /:path/
