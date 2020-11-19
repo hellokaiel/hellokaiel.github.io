@@ -110,6 +110,13 @@
     color: inherit;
 }
 
+.contact-list_item-link svg {
+    height: rem(16px);
+    width: rem(16px);
+    margin-left: rem(3px);
+    color: var(--color-primary-base); //Might put this on social media icon later on instead.
+}
+
 .about-qualifications_part-subdivision p {
     margin: auto 0 space(1);
 }

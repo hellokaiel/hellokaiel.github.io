@@ -30,17 +30,44 @@ title: Home
             {%- endif -%}
             <div class="blog-feed_aggregate">
                 {%- if blog_entries.size > 0 -%}
+                {% assign featured_posts = blog_entries | where:"featured", true %}
+                {%- if featured_posts != empty -%}
+                <div class="blog-feed_post-featured">
+                    <span class="post-featured_heading">Featured Posts</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                    </svg>
+                </div>    
+                <div class="post-year_collate">
+                {% for entry in featured_posts %}
+                <a href="{{ entry.url | relative_url }}" class="blog-post">
+                    <header class="blog-post_meta-header">
+                        <time class="blog-post_meta-date">{{ entry.date | date: "%b %d, %Y" }}</time>
+                        <h2 class="blog-post_meta-headline">{{ entry.headline }}</h2>
+                    </header>
+                    {%- if entry.cut -%}
+                    <img src="" class="blog-post_meta-cut">
+                    {%- endif -%}
+                </a>
+                {%- endfor -%}    
+                </div>
+                {%- endif -%}
                 {%- assign sort_by_year = blog_entries | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
                 {%- for year in sort_by_year -%}
                 <span class="blog-feed_post-year">{{ year.name }}</span>
+                <div class="post-year_collate">
                 {%- for entry in year.items -%}
                 <a href="{{ entry.url | relative_url }}" class="blog-post">
                     <header class="blog-post_meta-header">
                         <time class="blog-post_meta-date">{{ entry.date | date: "%b %d, %Y" }}</time>
                         <h2 class="blog-post_meta-headline">{{ entry.headline }}</h2>
                     </header>
-                </a>
+                    {%- if entry.cut -%}
+                    <img src="" class="blog-post_meta-cut">
+                    {%- endif -%}
+                </a>   
                 {%- endfor -%}
+                </div>    
                 {%- endfor -%}
                 {%- else -%}
                 <div class="blog-feed_empty">
