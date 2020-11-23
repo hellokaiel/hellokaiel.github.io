@@ -9,6 +9,18 @@ title: Home
                 <h1 class="feed-header-title">Blog</h1>
                 <div class="feed-header_categories">
                     <a class="feed-header_category">All</a>
+                    <a class="feed-header_dropdown">
+                        Categories
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                        <div class="feed-header_dropdown-content">
+                            <p>Commentary</p>
+                            <p>Lifestyle</p>
+                            <p>Research</p>
+                        </div>
+                    </a>
                     <a class="feed-header_category">Uncategorized</a>
                 </div>
             </header>
@@ -30,7 +42,7 @@ title: Home
             {%- endif -%}
             <div class="blog-feed_aggregate">
                 {%- if blog_entries.size > 0 -%}
-                {% assign featured_posts = blog_entries | where:"featured", true %}
+                {% assign featured_posts = blog_entries | where: "featured", true %}
                 {%- if featured_posts != empty -%}
                 <div class="blog-feed_post-featured">
                     <span class="post-featured_heading">Featured Posts</span>
@@ -52,7 +64,7 @@ title: Home
                 {%- endfor -%}    
                 </div>
                 {%- endif -%}
-                {%- assign sort_by_year = blog_entries | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
+                {%- assign sort_by_year = blog_entries | where: "featured", false | group_by_exp: 'post', 'post.date | date: "%Y"' -%}
                 {%- for year in sort_by_year -%}
                 <span class="blog-feed_post-year">{{ year.name }}</span>
                 <div class="post-year_collate">
