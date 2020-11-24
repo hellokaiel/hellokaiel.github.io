@@ -12,7 +12,26 @@ layout: default
                 {%- endif -%}
                 {%- if page.kicker -%}
                     <h3 class="post-article_meta-kicker">{{ page.kicker | escape }}</h3>
-                {%- endif -%}             
+                {%- endif -%}
+                <div class="post-article_meta-readtime">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                        <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                    </svg>
+                    <span>
+                    {%- assign words = content | number_of_words -%}
+                    {% if words < 180 %}
+                    Less Than A Min Read       
+                    {% else %}
+                    {% if words < 360 %}             
+                    1 Min Read 
+                    {% else %}
+                    {{ words | divided_by:180 }} Mins Read    
+                    {%- endif -%}
+                    {%- endif -%}
+                    </span>
+                </div>
             </header>
         </div>
         <div class="post-article_content">
@@ -29,7 +48,7 @@ layout: default
                 </div>
             </header>
             <a href="{{ post.url | relative_url }}" class="article-related_entry">
-                <h4 class="article-related_entry-headline">{{ page.title | escape }}</h4>
+                <h4 class="article-related_entry-headline">{{ page.headline | escape }}</h4>
                 <time class="article-related_entry-date">{{ page.date | date: "%b %d, %Y" }}</time>
             </a>
         </div>

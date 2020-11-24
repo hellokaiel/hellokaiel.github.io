@@ -41,6 +41,23 @@
     color: var(--color-contrast-600);
 }
 
+.post-article_meta-readtime {
+    display: flex;
+    align-items: center;
+    margin: space(.5) 0 space(.5);
+    font-size: rem(14px);
+    line-height: space(1);
+    font-weight: 400;
+    color: var(--color-contrast-700);
+}
+
+.post-article_meta-readtime > svg {
+    margin-right: rem(6px);
+    height: rem(18px);
+    width: rem(18px);
+    fill: var(--color-contrast-700);
+}
+
 .post-article_content {
     font-size: rem(18px);
     line-height: space(1.33333333333);

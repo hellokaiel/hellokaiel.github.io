@@ -38,11 +38,11 @@
     margin-right: rem(6px);
     padding: rem(3px) 0 rem(3px) rem(12px);
     text-align: center;
-    border-color: transparent;
+    border: 0;
     border-radius: 500px;
     background-color: var(--color-contrast-200);
     color: var(--color-contrast-700);
-    z-index: 1032;
+    z-index: 2;
 }
 
 .feed-header_dropdown > svg {
@@ -59,15 +59,19 @@
     left: 0;
     right: 0;
     margin-top: rem(-12px);
-    padding: rem(12px) 0 0 rem(12px);
+    padding-top: rem(12px);
     text-align: left;
     border-radius: 0 0 16px 16px;
     background-color: var(--color-contrast-200);
     z-index: -1;
 }
 
-.feed-header_dropdown-content > p {
+.feed-header_dropdown-content > a {
+    display: block;
     font-size: rem(14px);
+    line-height: space(1);
+    margin: rem(12px) 0;
+    padding-left: rem(12px);
 }
 
 .feed-header_dropdown:hover .feed-header_dropdown-content {
