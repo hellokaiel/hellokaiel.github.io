@@ -20,7 +20,7 @@
     display: grid;
     grid-template-columns: 1.2fr .8fr;
     grid-template-rows: 1fr;
-    height: rem(289px); // +1px for bottom border
+    height: rem(265px); // +1px for bottom border
     padding: rem(12px);
     border: rem(1px) solid var(--color-contrast-300);
     margin-bottom: (-1px);
