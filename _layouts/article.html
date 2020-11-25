@@ -21,12 +21,12 @@ layout: default
                     </svg>
                     <span>
                     {%- assign words = content | number_of_words -%}
-                    {% if words < 180 %}
+                    {%- if words < 180 -%}
                     Less Than A Min Read       
-                    {% else %}
-                    {% if words < 360 %}             
+                    {%- else -%}
+                    {%- if words < 360 -%}             
                     1 Min Read 
-                    {% else %}
+                    {%- else -%}
                     {{ words | divided_by:180 }} Mins Read    
                     {%- endif -%}
                     {%- endif -%}

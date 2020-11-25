@@ -3,10 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title>
+        {% if page.layout == 'default' %}    
         {%- if page.title == "Home" -%}
             {{ site.site_title }}
         {%- else -%}
             {{ page.title }} &#x2015; {{ site.site_title }}
+        {%- endif -%}      
+        {%- else -%}
+            {{ page.headline }} &#x2015; {{ site.site_title }}
         {%- endif -%}            
         </title>
         <meta name="description" content="{{ site.site_description }}">

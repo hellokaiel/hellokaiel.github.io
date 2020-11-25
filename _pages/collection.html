@@ -1,0 +1,54 @@
+---
+layout: default
+title: Collection
+---
+<main class="surface-content">
+    <section class="collection-feed">
+        <div class="container">
+            <header class="feed_feed-header">
+                <h1 class="feed-header-title">Collection</h1>
+                <div class="feed-header_categories">
+                    <a href="#" class="feed-header_category">All</a>
+                    <button class="feed-header_dropdown">
+                        Categories
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                        <div class="feed-header_dropdown-content">
+                            <a href="#">Photography</a>
+                        </div>
+                    </button>
+                    <a href="#" class="feed-header_category">Uncategorized</a>
+                </div>
+            </header>
+            
+            {%- assign collection_entries = site.posts | where:"type", "projects" -%}
+            <div class="collection-feed_aggregate">
+                {%- for entry in collection_entries -%}
+                <a href="{{ entry.url | relative_url }}" class="collection-post">
+                    <div class="collection-post_meta-left">
+                        <div class="collection-post_meta-section">
+                            <h2 class="collection-post_meta-headline">{{ entry.headline }}</h2>
+                            <time class="collection-post_meta-date">{{ entry.date | date: "%b %d, %Y" }}</time>
+                        </div>
+                        <div class="collection-post_meta-section">
+                            <p class="collection-post_meta-category">{{ entry.categories }}</p>
+                        </div>                        
+                    </div>
+                    <div class="collection-post_meta-right">
+                        <div class="collection-post_meta-section">
+                            {%- if entry.client -%}
+                            <p class="collection-post_meta-client">{{ entry.client }}</p>
+                            {%- endif -%}
+                        </div>
+                        <div class="collection-post_meta-section">
+                            <p class="collection-post_meta-details">Details</p>
+                        </div>                        
+                    </div>                    
+                </a>
+                {%- endfor -%}
+            </div>
+        </div>
+    </section>
+</main>
