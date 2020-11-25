@@ -7,6 +7,9 @@ site-navigation:
     - 
       name: "Blog"
       url: /
+    - 
+      name: "Collection"
+      url: /collection      
       
 site-footer: 
   links: 
