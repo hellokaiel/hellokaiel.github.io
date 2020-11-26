@@ -112,6 +112,7 @@
 }
 
 .post-article_meta-deck {
+    max-width: 75%;    
     margin: 0 0 space(.5);
     font-size: rem(24px);
     line-height: space(1.5);
@@ -203,6 +204,7 @@
 }
 
 .article-related_entry-headline {
+    max-width: 75%;    
     margin: 0;
     font-size: rem(16px);
     line-height: space(1);
