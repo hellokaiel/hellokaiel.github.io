@@ -106,6 +106,10 @@
     border-bottom: rem(1px) solid var(--color-contrast-200);
 }
 
+.about-qualifications_contact-list_item address {
+    font-size: rem(12px);
+}
+
 .about-qualifications_contact-list_flag {
     margin-right: space(.5);
     font-size: rem(16px);
