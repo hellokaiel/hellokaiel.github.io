@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}?{{ site.time | date: '%s%N' }}">
         
         <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+        <script src="{{ "/assets/js/vendor/lazysizes.min.js" | relative_url }}?{{ site.time | date: '%s%N' }}" async=""></script>
         
         <meta name="theme-color" content="#fafafa">
     </head>
@@ -39,6 +40,5 @@
         
             {% include globals/site-footer.html %}
         </div>
-        <script src="{{ "/assets/js/vendor/lazysizes.min.js" | relative_url }}?{{ site.time | date: '%s%N' }}"></script>
     </body>
 </html>
