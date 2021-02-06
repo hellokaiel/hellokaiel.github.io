@@ -38,6 +38,7 @@
             {{ content }}
         
             {% include globals/site-footer.html %}
-        </div>    
+        </div>
+        <script src="{{ "/assets/js/vendor/lazysizes.min.js" | relative_url }}?{{ site.time | date: '%s%N' }}"></script>
     </body>
 </html>
